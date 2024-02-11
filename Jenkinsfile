@@ -15,5 +15,15 @@ environment {
                  echo "----------- build complted ----------"
             }
         }
+        stage("sonarQube analysi"){
+	    environmnet {
+                scannerHome = tool 'sneh-sonar-scanner'
+	    }
+            steps {
+                withSonarQubeEnv('ani-sonarqube-server') {
+                   sh "${scannerHome}/bin/sonar-scanner"
+                }
+	    }
+	}
     }
 }
