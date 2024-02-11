@@ -21,7 +21,7 @@ environment {
             }
             steps{
                 script{
-                    withSonarQubeEnv('ani-sonarqube-server'){
+                    withSonarQubeEnv('sneh-sonarqube-server'){
                         sh "${scannerHome}/bin/sonar-scanner"
                     }
                 }
